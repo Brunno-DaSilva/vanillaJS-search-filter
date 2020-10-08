@@ -7,8 +7,28 @@
     <link rel="stylesheet" href="./CSS/styles.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <header>
+      <h1>Vanilla Filter Data</h1>
+    </header>
 
+    <div id="app">
+      <form class="search-form">
+        <input type="text" class="search" placeholder="Search for an item" />
+
+        <label class="payLabel" for="cardType">Card Type:</label>
+        <select id="cardType" name="cards">
+          <option value="selectCard">All</option>
+          <option value="email">Email</option>
+          <option value="name">Name</option>
+        </select>
+
+        <input type="button" onclick="selectDropdown()" value="click here" />
+
+        <ul class="suggestions">
+          <li id="error" class="error displayNone">Please Select an Option</li>
+        </ul>
+      </form>
+    </div>
     <script src="./JS/app.js"></script>
   </body>
 </html>

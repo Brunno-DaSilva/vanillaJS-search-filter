@@ -1,3 +1,15 @@
 body {
-  background-color: aqua;
+  background-color: rgb(245, 255, 255);
+}
+
+.SHOW {
+  display: block;
+}
+.error {
+  color: red;
+  list-style: none;
+}
+
+.displayNone {
+  display: none;
 }

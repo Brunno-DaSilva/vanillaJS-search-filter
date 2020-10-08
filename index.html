@@ -8,26 +8,32 @@
   </head>
   <body>
     <header>
-      <h1>Vanilla Filter Data</h1>
+      <h1>Vanilla JS Filter Data</h1>
     </header>
 
     <div id="app">
       <form class="search-form">
-        <input type="text" class="search" placeholder="Search for an item" />
+        <div class="search-container">
+          <input
+            type="text"
+            class="search"
+            placeholder="Enter a Search term..."
+          />
+        </div>
+        <div class="dropdown-container">
+          <label class="dataType-title" for="dataType">Data Type:</label>
 
-        <label class="payLabel" for="cardType">Card Type:</label>
-        <select id="cardType" name="cards">
-          <option value="selectCard">All</option>
-          <option value="email">Email</option>
-          <option value="name">Name</option>
-        </select>
-
-        <input type="button" onclick="selectDropdown()" value="click here" />
-
-        <ul class="suggestions">
-          <li id="error" class="error displayNone">Please Select an Option</li>
-        </ul>
+          <select id="dataType" name="cards">
+            <option value="selectCard">All Information</option>
+            <option value="email">Email</option>
+            <option value="name">Name</option>
+          </select>
+        </div>
+        <div class="btn-container">
+          <input type="button" onclick="selectDropdown()" value="Search" />
+        </div>
       </form>
+      <ul class="suggestions"></ul>
     </div>
     <script src="./JS/app.js"></script>
   </body>

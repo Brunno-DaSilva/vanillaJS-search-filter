@@ -12,7 +12,6 @@ const findMatches = (wordToMatch, dataSet) => {
   return dataSet.filter((data) => {
     //regex
     const regex = new RegExp(wordToMatch, "gi");
-
     return data.name.match(regex) || data.email.match(regex);
   });
 };
@@ -35,11 +34,9 @@ function displayMatches() {
 
 const errorMSG = document.querySelector("#error");
 
-selectDropdown();
-
 function selectDropdown() {
-  const cardType = document.getElementById("cardType");
-  const selectedValue = cardType.options[cardType.selectedIndex].value;
+  const dataType = document.getElementById("dataType");
+  const selectedValue = dataType.options[dataType.selectedIndex].value;
 
   if (selectedValue == "selectCard") {
     // alert("selectCard");
@@ -47,11 +44,11 @@ function selectDropdown() {
     const html2 = dataSet
       .map((data) => {
         return `
-        <li>
-        <span class="name">${data.name}</span>
-        <span class="email">${data.email}</span>
-        </li>
-        `;
+            <li>
+            <span class="name">${data.name}</span>
+            <span class="email">${data.email}</span>
+            </li>
+            `;
       })
       .join("");
     suggestions.innerHTML = html2;
@@ -59,10 +56,10 @@ function selectDropdown() {
     const html3 = dataSet
       .map((data) => {
         return `
-      <li>
-      <span class="email">${data.email}</span>
-      </li>
-      `;
+            <li>
+            <span class="email">${data.email}</span>
+            </li>
+            `;
       })
       .join("");
     suggestions.innerHTML = html3;
@@ -70,13 +67,14 @@ function selectDropdown() {
     const html4 = dataSet
       .map((data) => {
         return `
-      <li>
-      <span class="email">${data.name}</span>
-      </li>
-      `;
+            <li>
+            <span class="email">${data.name}</span>
+            </li>
+            `;
       })
       .join("");
     suggestions.innerHTML = html4;
   }
 }
+
 searchInput.addEventListener("keyup", displayMatches);
